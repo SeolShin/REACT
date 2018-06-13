@@ -1,15 +1,10 @@
-import React, {
-    Component
-} from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import CardList from './containers/CardList';
 import SearchBox from './containers/SearchBox';
 import 'tachyons'
 import Scroll from './containers/Scroll';
-
-import {
-    fList
-} from './fList';
+import { fList } from './fList';
 
 class App extends Component {
 
