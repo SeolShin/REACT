@@ -4,6 +4,8 @@ import CardList from './containers/CardList';
 import SearchBox from './containers/SearchBox';
 import 'tachyons'
 import Scroll from './containers/Scroll';
+import ErrorBoundry from './containers/ErrorBoundry'
+
 import { fList } from './fList';
 
 class App extends Component {
@@ -25,6 +27,7 @@ class App extends Component {
     } //onSearchChange
 
     componentDidMount() {
+        console.log(this.props.store);
         fetch('https://jsonplaceholder.typicode.com/photos')
             .then(response => {
                 return response.json();
@@ -56,11 +59,14 @@ class App extends Component {
                 }
                 />  <
                 Scroll >
+                <ErrorBoundry >
                 <
                 CardList fList = {
                     filteredRobots
                 }
-                />  < /
+                />  
+             </ErrorBoundry > 
+             < /
                 Scroll > < /
                 div >
             )
